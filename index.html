@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>D2 Real Estate Services | Austin Apartment Brokerage</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <meta name="description" content="D2 Real Estate Services provides apartment brokerage and advisory services for Austin investors, focused on apartment properties under 100 units." />
+
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      color: #0f172a;
+      background: #ffffff;
+      line-height: 1.5;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      border-bottom: 1px solid #e2e8f0;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(10px);
+    }
+    .header-inner {
+      max-width: 1152px;
+      margin: 0 auto;
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+    .brand-d2 {
+      font-size: 48px;
+      line-height: 0.95;
+      font-weight: 700;
+      letter-spacing: -0.06em;
+      color: #020617;
+      flex: 0 0 auto;
+    }
+    .brand-lockup {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      line-height: 1.05;
+      color: #020617;
+      white-space: nowrap;
+    }
+    .brand-line {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.035em;
+    }
+    .nav {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      color: #475569;
+      font-size: 14px;
+    }
+    .nav a:hover { color: #0f172a; }
+    .contact-button {
+      border-radius: 12px;
+      background: #0f172a;
+      color: #ffffff;
+      padding: 8px 16px;
+      font-size: 14px;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .contact-button:hover { background: #334155; }
+
+    .section {
+      max-width: 1152px;
+      margin: 0 auto;
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+    .hero {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 32px;
+      padding-top: 48px;
+      padding-bottom: 56px;
+      overflow: hidden;
+    }
+    
+    .hero > * { position: relative; }
+    h1 {
+      font-size: 60px;
+      line-height: 0.95;
+      font-weight: 600;
+      letter-spacing: -0.04em;
+      color: #020617;
+    }
+    .hero-text {
+      margin-top: 12px;
+      font-size: 18px;
+      line-height: 1.65;
+      color: #475569;
+      max-width: 620px;
+    }
+    .button-row {
+      margin-top: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      padding: 12px 20px;
+      font-weight: 500;
+    }
+    .button.primary { background: #0f172a; color: #ffffff; }
+    .button.primary:hover { background: #334155; }
+    .button.secondary { border: 1px solid #cbd5e1; color: #0f172a; }
+    .button.secondary:hover { background: #f8fafc; }
+
+    .hero-card, .service-card {
+      border: 1px solid #e2e8f0;
+      border-radius: 24px;
+      background: #ffffff;
+      box-shadow: 0 1px 2px rgba(15,23,42,0.05);
+    }
+    .hero-card { padding: 32px; }
+    .hero-card h2 {
+      font-size: 24px;
+      line-height: 1.25;
+      font-weight: 600;
+    }
+    .hero-card p { margin-top: 16px; color: #475569; }
+    .check-list { margin-top: 32px; display: grid; gap: 16px; }
+    .check-item { display: flex; gap: 12px; color: #334155; }
+    .check {
+      margin-top: 4px;
+      width: 20px;
+      height: 20px;
+      border-radius: 999px;
+      background: #0f172a;
+      color: #ffffff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      flex: 0 0 auto;
+    }
+
+    .services-wrap {
+      border-top: 1px solid #e2e8f0;
+      border-bottom: 1px solid #e2e8f0;
+      background: #f8fafc;
+    }
+    .services, .about, .contact { padding-top: 64px; padding-bottom: 80px; }
+    .eyebrow {
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #64748b;
+    }
+    .section-title {
+      margin-top: 12px;
+      font-size: 40px;
+      line-height: 1.1;
+      font-weight: 600;
+      letter-spacing: -0.035em;
+      max-width: 720px;
+    }
+    .service-grid {
+      margin-top: 40px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .service-card { padding: 28px; }
+    .icon-box {
+      width: 44px;
+      height: 44px;
+      border-radius: 16px;
+      background: #f1f5f9;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .service-card h3 {
+      margin-top: 24px;
+      font-size: 20px;
+      font-weight: 600;
+    }
+    .service-card p {
+      margin-top: 12px;
+      color: #475569;
+      line-height: 1.75;
+    }
+
+    .about-grid, .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr; /* give text more width */
+      gap: 40px;
+    }
+    .headshot {
+      margin-top: 24px;
+      width: 380px; /* larger for balance */
+      border-radius: 16px;
+      box-shadow: 0 1px 2px rgba(15,23,42,0.08);
+    }
+    .bio {
+      font-size: 18px;
+      line-height: 1.75;
+      color: #475569;
+      max-width: 680px;
+    }
+    .bio p + p { margin-top: 20px; }
+    .bio strong { color: #0f172a; }
+
+    .contact-box {
+      border-radius: 24px;
+      background: #f1f5f9;
+      padding: 32px;
+    }
+    .contact-copy {
+      margin-top: 20px;
+      font-size: 18px;
+      line-height: 1.75;
+      color: #475569;
+    }
+    .contact-cards { display: grid; gap: 16px; color: #334155; }
+    .contact-card {
+      border-radius: 16px;
+      background: #ffffff;
+      padding: 16px;
+    }
+    .contact-label { font-size: 14px; color: #64748b; }
+    .contact-value { font-weight: 600; color: #0f172a; }
+    .email-button {
+      margin-top: 16px;
+      display: inline-flex;
+      border-radius: 12px;
+      background: #0f172a;
+      color: #ffffff;
+      padding: 12px 20px;
+      font-weight: 500;
+    }
+
+    .footer {
+      border-top: 1px solid #e2e8f0;
+      padding: 32px 24px;
+      text-align: center;
+      color: #64748b;
+      font-size: 14px;
+    }
+    .footer-links { margin-top: 8px; display: grid; gap: 4px; }
+    .footer a { text-decoration: underline; text-underline-offset: 3px; }
+    .footer a:hover { color: #334155; }
+
+    @media (max-width: 900px) {
+      .nav { display: none; }
+      h1 { font-size: 42px; }
+      .hero, .about-grid, .contact-grid { grid-template-columns: 1fr; }
+      .service-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 640px) {
+      .header-inner { padding: 12px 18px; }
+      .brand-d2 { font-size: 38px; }
+      .brand-line { font-size: 18px; }
+      .contact-button { display: none; }
+      .hero { padding-top: 36px; padding-bottom: 56px; }
+      h1 { font-size: 34px; }
+      .hero-text { font-size: 17px; }
+      .button-row { flex-direction: column; }
+      .button { width: 100%; }
+      .section-title { font-size: 32px; }
+      .services, .about, .contact { padding-top: 56px; padding-bottom: 64px; }
+      .hero-card, .contact-box { padding: 24px; }
+      .headshot { width: 192px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <a href="#" class="brand" aria-label="D2 Real Estate Services homepage">
+        <span class="brand-d2">D2</span>
+        <span class="brand-lockup" aria-hidden="true">
+          <span class="brand-line">Real Estate</span>
+          <span class="brand-line">Services</span>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      
+    </div>
+  </header>
+
+  <main>
+    <section class="section hero">
+      <div>
+        <h1>Apartment brokerage for Austin &amp; Central Texas investors</h1>
+        <p class="hero-text">Focused on apartment properties under 100 units, with disciplined pricing, clear analysis, and direct broker-level execution.</p>
+        <div class="button-row">
+          <a href="#contact" class="button primary">Discuss a Property</a>
+          <a href="#services" class="button secondary">View Services</a>
+        </div>
+      </div>
+
+      <div class="hero-graphic" style="display:flex; flex-direction:column; align-items:center; justify-content:center; padding:0;">
+        <img src="apartmentsketch.png" alt="Modern apartment illustration" style="max-width:95%; height:auto; border-radius:20px; box-shadow: 0 8px 24px rgba(15,23,42,0.06);">
+      </div>
+    </section>
+
+    <section id="services" class="services-wrap">
+      <div class="section services">
+        <p class="eyebrow">Services</p>
+        <h2 class="section-title">Brokerage services built around clarity</h2>
+
+        <div class="service-grid">
+          <div class="service-card">
+            <div class="icon-box" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="2" width="7" height="20"></rect>
+                <rect x="14" y="6" width="7" height="16"></rect>
+                <line x1="7" y1="6" x2="7" y2="6"></line>
+                <line x1="7" y1="10" x2="7" y2="10"></line>
+                <line x1="7" y1="14" x2="7" y2="14"></line>
+                <line x1="18" y1="10" x2="18" y2="10"></line>
+                <line x1="18" y1="14" x2="18" y2="14"></line>
+              </svg>
+            </div>
+            <h3>Multifamily Sales</h3>
+            <p>Listing and buyer representation for apartment properties, with a focus on pricing discipline and investor-ready marketing.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="icon-box" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 19V5"></path>
+                <path d="M4 19h16"></path>
+                <path d="M7 15l4-4 3 3 5-7"></path>
+              </svg>
+            </div>
+            <h3>Valuation-Led Advisory</h3>
+            <p>Broker opinions of value, rent positioning, buyer demand analysis, and sale strategy.</p>
+          </div>
+
+          <div class="service-card">
+            <div class="icon-box" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 11l9-8 9 8"></path>
+                <path d="M5 10v11h14V10"></path>
+                <path d="M9 21v-6h6v6"></path>
+              </svg>
+            </div>
+            <h3>Residential Representation</h3>
+            <p>Select residential and luxury home representation for clients who value investment-minded guidance.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section about">
+      <div class="about-grid">
+        <div>
+          <p class="eyebrow">About</p>
+          <h2 class="section-title">Independent broker-led advisory for apartment owners and investors</h2>
+          <img src="headshot.jpg" alt="David McKenery headshot" class="headshot" />
+        </div>
+
+        <div class="bio">
+          <p><strong>David McKenery</strong><br />Texas Broker License #637408</p>
+          <p>David specializes in sales and transaction advisory of apartment properties under 100 units across Austin and Central Texas.</p>
+          <p>He is a Certified General Appraiser with <strong>a decade</strong> of multifamily valuation and market analysis experience statewide. He provides clients with disciplined pricing guidance, underwriting insight, and practical transaction execution.</p>
+          <p>His approach combines brokerage execution with valuation-driven analysis, allowing clients to make informed decisions around pricing, timing, and positioning. David works directly with clients throughout the transaction process, delivering clear communication and accountable representation from initial valuation and pricing through closing.</p>
+          <p>In addition to multifamily, David advises clients on the sale of select investment homes and luxury residences.</p>
+          <p>David holds a Master of Real Estate from Texas A&amp;M University and a BBA from The University of Texas at Austin's McCombs School of Business.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <div class="contact-box">
+        <div class="contact-grid">
+          <div>
+            <p class="eyebrow">Contact</p>
+            <h2 class="section-title">Have a property to discuss?</h2>
+            <p class="contact-copy">Reach out for a direct conversation about valuation, sale timing, buyer demand, or acquisition strategy.</p>
+          </div>
+
+          <div class="contact-cards">
+            <div class="contact-card"><p class="contact-label">Phone</p><p class="contact-value">(512) 766-9577</p></div>
+            <div class="contact-card"><p class="contact-label">Email</p><p class="contact-value">david@d2res.com</p></div>
+            <div class="contact-card"><p class="contact-label">Market</p><p class="contact-value">Austin &amp; Central Texas</p></div>
+            <a href="mailto:david@d2res.com" class="email-button">Email</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-links">
+      <p>Based in Austin, TX</p>
+      <p>Texas Broker License #637408</p>
+      <p>© 2026 D2 Real Estate Services. All rights reserved.</p>
+      <p>
+        <a href="IABS.pdf">Information About Brokerage Services (IABS)</a>
+        <span> | </span>
+        <a href="ConsumerProtectionNotice.pdf">Texas Real Estate Commission Consumer Protection Notice</a>
+      </p>
+    </div>
+  </footer>
+</body>
+</html>
