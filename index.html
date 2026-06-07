@@ -339,7 +339,43 @@
       .hero-card, .contact-box { padding: 24px; }
       .headshot { width: 192px; }
     }
-    .contact {
+    .contact-icons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 22px;
+  margin-top: 40px;
+}
+.contact-icons a {
+  display: inline-flex;
+  align-items: center;
+  opacity: 1;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.contact-icons a:hover {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+.contact-icons img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+    .resources {
+  padding-top: 64px;
+  padding-bottom: 80px;
+}
+
+.resource-copy {
+  margin-top: 16px;
+  max-width: 680px;
+  color: #475569;
+  font-size: 18px;
+  line-height: 1.75;
+}
+     .contact {
   padding-bottom: 88px;
 }
 
@@ -371,42 +407,6 @@
 .contact-icons img {
   width: 52px;
   height: 52px;
-}
-    .contact-icons {
-  display: flex;
-  align-items: center;
-  gap: 22px;
-  margin-top: 40px;
-}
-
-.contact-icons a {
-  display: inline-flex;
-  align-items: center;
-  opacity: 1;
-  transition: opacity 0.2s ease, transform 0.2s ease;
-}
-
-.contact-icons a:hover {
-  opacity: 1;
-  transform: translateY(-1px);
-}
-
-.contact-icons img {
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
-}
-    .resources {
-  padding-top: 64px;
-  padding-bottom: 80px;
-}
-
-.resource-copy {
-  margin-top: 16px;
-  max-width: 680px;
-  color: #475569;
-  font-size: 18px;
-  line-height: 1.75;
 }
   </style>
 </head>
